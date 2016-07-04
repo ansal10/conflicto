@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="1"
-    android:background="@color/topic_row"
+    android:background="@drawable/row_selector"
     android:clickable="true"
     android:focusable="true"
     android:layout_marginBottom="10dp"
@@ -67,14 +67,14 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="12dp"
-                    android:textSize="8sp"
+                    android:layout_height="16dp"
+                    android:textSize="@dimen/meta_data_text_size"
                     android:id="@+id/likers_text"
                     android:textColor="@color/meta_data_text_color"
                     android:text="12333"/>
                 <ImageView
                     android:layout_width="16dp"
-                    android:layout_height="12dp"
+                    android:layout_height="16dp"
                     android:src="@drawable/thumbs_up"/>
             </LinearLayout>
 
@@ -87,14 +87,14 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="12dp"
-                    android:textSize="8sp"
+                    android:layout_height="16dp"
+                    android:textSize="@dimen/meta_data_text_size"
                     android:id="@+id/dislikers_text"
                     android:textColor="@color/meta_data_text_color"
                     android:text="12333"/>
                 <ImageView
                     android:layout_width="16dp"
-                    android:layout_height="12dp"
+                    android:layout_height="16dp"
                     android:src="@drawable/thumbs_down"/>
             </LinearLayout>
 
@@ -107,14 +107,14 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="12dp"
-                    android:textSize="8sp"
+                    android:layout_height="16dp"
+                    android:textSize="@dimen/meta_data_text_size"
                     android:id="@+id/followers_text"
                     android:textColor="@color/meta_data_text_color"
                     android:text="12333"/>
                 <ImageView
                     android:layout_width="16dp"
-                    android:layout_height="12dp"
+                    android:layout_height="16dp"
                     android:src="@drawable/applause"/>
             </LinearLayout>
 
@@ -140,14 +140,14 @@
             android:layout_weight="0.2"
             android:id="@+id/postedon_text"
             android:text="3 min ago"
-            android:textSize="8sp"
+            android:textSize="@dimen/meta_data_text_size"
             android:textColor="@color/meta_data_text_color"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="8sp"
+            android:textSize="@dimen/meta_data_text_size"
             android:id="@+id/supporters"
             android:textColor="@color/meta_data_text_color"
             android:text="12333"/>
@@ -160,7 +160,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="8sp"
+            android:textSize="@dimen/meta_data_text_size"
             android:id="@+id/conflictors"
             android:textColor="@color/meta_data_text_color"
             android:text="12333"/>

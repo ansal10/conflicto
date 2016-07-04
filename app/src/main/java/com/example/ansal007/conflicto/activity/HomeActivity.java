@@ -3,6 +3,7 @@ package com.example.ansal007.conflicto.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,11 +25,12 @@ import java.util.List;
 
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SwipeRefreshLayout.OnRefreshListener {
 
     private List<Topic> topicList = new ArrayList<>();
     private RecyclerView recyclerView;
     private TopicAdapter mAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,8 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         recyclerView = (RecyclerView) findViewById(R.id.topic_recycler_view);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeHomeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(this);
         mAdapter = new TopicAdapter(topicList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -163,4 +167,12 @@ public class HomeActivity extends AppCompatActivity
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
     }
+
+    @Override
+    public void onRefresh() {
+        prepareTopicData();
+        mAdapter.notifyListModification();
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
 }

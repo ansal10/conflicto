@@ -47,6 +47,10 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder
         this.topicList = topicList;
     }
 
+    public void notifyListModification(){
+        notifyDataSetChanged();
+    }
+
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -66,4 +70,5 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder
 
 
         }
+
     }
