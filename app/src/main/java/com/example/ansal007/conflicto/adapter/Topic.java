@@ -5,7 +5,7 @@ package com.example.ansal007.conflicto.adapter;
  */
 public class Topic {
 
-    private String subject;
+    private String userDisplayName;
     private String title;
     private String description;
     private int likers;
@@ -15,8 +15,8 @@ public class Topic {
     private int conflicters;
     private String postedOn;
 
-    public Topic(String subject, String title, String description, int likers, int dislikers, int followers, int favourers, int conflicters, String postedOn) {
-        this.subject = subject;
+    public Topic(String userDisplayName, String title, String description, int likers, int dislikers, int followers, int favourers, int conflicters, String postedOn) {
+        this.userDisplayName = userDisplayName;
         this.title = title;
         this.description = description;
         this.likers = likers;
@@ -29,12 +29,12 @@ public class Topic {
 
     public Topic(){}
 
-    public String getSubject() {
-        return subject;
+    public String getUserDisplayName() {
+        return userDisplayName;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setUserDisplayName(String userDisplayName) {
+        this.userDisplayName = userDisplayName;
     }
 
     public String getTitle() {

@@ -30,8 +30,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Topic topic = topicList.get(position);
 
-        holder.title.setText(topic.getTitle());
-        holder.description.setText(topic.getDescription());
+        holder.title.setText(topic.getDescription());
+        holder.userProfileName.setText(topic.getUserDisplayName());
         holder.postedOn.setText(topic.getPostedOn());
         holder.likers.setText(String.valueOf(topic.getLikers()));
         holder.dislikers.setText(String.valueOf(topic.getDislikers()));
@@ -51,13 +51,13 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView title, description, postedOn, likers, dislikers, followers;
+        public TextView title, userProfileName, postedOn, likers, dislikers, followers;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             title = (TextView) itemView.findViewById(R.id.title_text);
-            description = (TextView) itemView.findViewById(R.id.description_text);
+            userProfileName = (TextView) itemView.findViewById(R.id.profile_name_text);
             postedOn = (TextView) itemView.findViewById(R.id.postedon_text);
             likers = (TextView) itemView.findViewById(R.id.likers_text);
             dislikers = (TextView) itemView.findViewById(R.id.dislikers_text);

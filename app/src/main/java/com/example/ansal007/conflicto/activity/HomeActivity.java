@@ -127,39 +127,39 @@ public class HomeActivity extends AppCompatActivity
     private void prepareTopicData() {
         Topic topic;
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Daniel", "Are all Politicians Good", "Can we conclude that most politicians in india are better",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Monica", "Are all Politicians Good", "Is veg food better than non veg",
                 23, 46, 871, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Sharewan", "Are all Politicians Good", "Chennai is a better place than delhi or not ??",
                 23, 146, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Rakshit", "Are all Politicians Good", "Do you think india can make living standards as high as singapore",
                 223, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Demona", "Are all Politicians Good", "Django or Flask ? Which is better framework",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Lakshaya", "Are all Politicians Good", "Harry potter or Lord of rings ? which is considered better book",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Martin Luther", "Are all Politicians Good", "Can we conclude that most politicians in india are better",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Redclop", "Are all Politicians Good", "Can we conclude that most politicians in india are better",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
-        topic = new Topic(null, "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Jharna mary beb", "Are all Politicians Good", "Can we conclude that most politicians in india are better",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
     }

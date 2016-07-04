@@ -3,58 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:weightSum="1"
     android:background="@color/topic_row"
     android:clickable="true"
-    android:longClickable="true"
-    android:onClick=""
+    android:focusable="true"
+    android:layout_marginBottom="10dp"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:padding="4dp"
-                android:src="@drawable/ic_menu_gallery"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:padding="4dp"
-                    android:id="@+id/title_text"
-                    android:text="Heading Goes Here"
-                    android:textSize="24sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxHeight="36dp"
-                    android:id="@+id/description_text"
-                    android:text="So here goes conflicto , The main feature about this is this cab be a debatic topic or can be a assumptionable political topic that can have multiple historic data associated with it"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="18dp"
-        android:background="@color/backgoundThemeColor"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:weightSum="1"
         >
@@ -62,60 +20,155 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/thumbs_up"
-            android:layout_weight="0.1"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackText"
-            android:id="@+id/likers_text"
-            android:text="23"/>
-
-        <ImageView
+            android:layout_weight="0.15"
+            android:src="@drawable/conflicto_main_logo"
+            />
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/thumbs_down"
-            android:layout_weight="0.1"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackText"
-            android:id="@+id/dislikers_text"
-            android:text="45"/>
+            android:layout_weight="0.7"
+            android:orientation="vertical"
+            android:weightSum="1">
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name Here"
+                android:id="@+id/profile_name_text"
+                android:textColor="@color/profile_name_colour"
+                android:padding="2dp"
+                android:textStyle="bold"
+                />
 
-        <ImageView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_text"
+                android:textSize="12sp"
+                android:text="Is Veg better that Non veg ? this is the mainconver"
+                android:textColor="@color/home_light_text_color"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.1"
-            android:src="@drawable/follower"/>
+            android:layout_weight="0.15"
+            android:orientation="vertical"
+            >
 
-        <TextView
-            android:layout_weight="0.1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackText"
-            android:id="@+id/followers_text"
-            android:text="99"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp"
+                >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="posted on :"
-            android:textColor="@color/blackText"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:textSize="8sp"
+                    android:id="@+id/likers_text"
+                    android:textColor="@color/meta_data_text_color"
+                    android:text="12333"/>
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/thumbs_up"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackText"
-            android:id="@+id/postedon_text"
-            android:text="3 day ago" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:textSize="8sp"
+                    android:id="@+id/dislikers_text"
+                    android:textColor="@color/meta_data_text_color"
+                    android:text="12333"/>
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/thumbs_down"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:textSize="8sp"
+                    android:id="@+id/followers_text"
+                    android:textColor="@color/meta_data_text_color"
+                    android:text="12333"/>
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/applause"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:id="@+id/postedon_text"
+            android:text="3 min ago"
+            android:textSize="8sp"
+            android:textColor="@color/meta_data_text_color"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:id="@+id/supporters"
+            android:textColor="@color/meta_data_text_color"
+            android:text="12333"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/thumbs_up"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:id="@+id/conflictors"
+            android:textColor="@color/meta_data_text_color"
+            android:text="12333"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/thumbs_down"/>
+
+    </LinearLayout>
 
 </LinearLayout>

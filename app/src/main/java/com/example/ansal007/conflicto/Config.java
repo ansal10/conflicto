@@ -16,7 +16,7 @@ public class Config {
 
     public static Config getInstance(){
         if (config == null)
-            config = new Config("emdev");
+            config = new Config("dev");
 
         return config;
     }

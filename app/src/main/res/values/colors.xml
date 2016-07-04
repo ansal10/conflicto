@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4ef71f</color>
+    <color name="colorPrimary">#5c7e53</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="backgoundThemeColor">#bbf9aa</color>
     <color name="blackText">#000000</color>
     <color name="home_background">#d4f5a2</color>
     <color name="topic_row">#484848</color>
+    <color name="body_background_color">#e4ffcb</color>
+    <color name="home_dark_text_color">#000000</color>
+    <color name="home_light_text_color">#FFFFFF</color>
+    <color name="profile_name_colour">#daffc4</color>
+    <color name="meta_data_text_color">#5c6afd</color>
 </resources>
