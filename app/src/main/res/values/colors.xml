@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="backgoundThemeColor">#bbf9aa</color>
     <color name="blackText">#000000</color>
+    <color name="home_background">#d4f5a2</color>
+    <color name="topic_row">#484848</color>
 </resources>

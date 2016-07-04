@@ -1,5 +1,6 @@
 package com.example.ansal007.conflicto.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -86,6 +87,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
             Boolean success = response.getBoolean("success");
             if (success){
                 Toast.makeText(this, "Successfully login, will start new activity", LENGTH_SHORT).show();
+                startActivity(new Intent(this, HomeActivity.class));
             }else {
                 int errorCode = response.getJSONObject("error").getInt("code");
                 String message = response.getJSONObject("error").getString("message");

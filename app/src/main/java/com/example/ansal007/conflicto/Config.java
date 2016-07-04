@@ -26,20 +26,19 @@ public class Config {
     }
 
     private String getHost(){
-        if (ENV.equals(EMULATOR_DEV))
-            return "10.0.2.2";
-
-        else return "10.0.2.2";
+        switch (ENV) {
+            case EMULATOR_DEV:
+                return "10.0.2.2:8000";
+            case DEVICE_DEV:
+                return "3b33b321.ngrok.io";
+            default:
+                return "10.0.2.2";
+        }
     }
 
-    private String getPort(){
-        if ( ENV.equals(EMULATOR_DEV) || ENV.equals(DEVICE_DEV))
-            return ":8000";
 
-        else return ":8000";
-    }
 
     public String getSigninUrl() {
-        return "http://"+getHost()+getPort()+signinUrl;
+        return "http://"+getHost()+signinUrl;
     }
 }
