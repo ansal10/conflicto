@@ -41,13 +41,14 @@ public class HomeActivity extends AppCompatActivity
         recyclerView = (RecyclerView) findViewById(R.id.topic_recycler_view);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeHomeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
-        mAdapter = new TopicAdapter(topicList);
+        mAdapter = new TopicAdapter(topicList, getApplicationContext());
+
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        prepareTopicData();
+        onRefresh();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -131,7 +132,7 @@ public class HomeActivity extends AppCompatActivity
     private void prepareTopicData() {
         Topic topic;
 
-        topic = new Topic("Daniel", "Are all Politicians Good", "Can we conclude that most politicians in india are better",
+        topic = new Topic("Daniel", "Are all Politicians Good", "Can we conclude that most politicians in india are bette if that is not the case then we think we might need to migrate to some western countries which are more capable of handling laws and regulations",
                 23, 46, 87, 0,0, "2 min ago");
         topicList.add(topic);
 
@@ -170,6 +171,7 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public void onRefresh() {
+        swipeRefreshLayout.setRefreshing(true);
         prepareTopicData();
         mAdapter.notifyListModification();
         swipeRefreshLayout.setRefreshing(false);

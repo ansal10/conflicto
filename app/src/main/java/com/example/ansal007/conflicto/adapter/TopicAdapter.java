@@ -1,9 +1,12 @@
 package com.example.ansal007.conflicto.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.example.ansal007.conflicto.R;
@@ -16,6 +19,7 @@ import java.util.List;
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder>{
 
     private List<Topic> topicList;
+    private Context context;
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(
@@ -38,18 +42,21 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.MyViewHolder
         holder.followers.setText(String.valueOf(topic.getFollowers()));
     }
 
+
     @Override
     public int getItemCount() {
         return topicList.size();
     }
 
-    public TopicAdapter(List<Topic> topicList) {
+    public TopicAdapter(List<Topic> topicList, Context context) {
         this.topicList = topicList;
+        this.context = context;
     }
 
     public void notifyListModification(){
         notifyDataSetChanged();
     }
+
 
 
 

@@ -5,11 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="backgoundThemeColor">#bbf9aa</color>
     <color name="blackText">#000000</color>
-    <color name="home_background">#5e5e5e</color>
-    <color name="topic_row">#484848</color>
+    <color name="home_background">#ffffff</color>
+    <color name="topic_row">#a9a8a8</color>
     <color name="body_background_color">#e4ffcb</color>
     <color name="home_dark_text_color">#000000</color>
-    <color name="home_light_text_color">#FFFFFF</color>
-    <color name="profile_name_colour">#daffc4</color>
-    <color name="meta_data_text_color">#7b86fc</color>
+    <color name="home_light_text_color">#000000</color>
+    <color name="profile_name_colour">#0117fc</color>
+    <color name="meta_data_text_color">#0117fc</color>
 </resources>
