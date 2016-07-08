@@ -6,17 +6,21 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog dialog;
     private Handler handler;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupProgressDialogue();
+        setupProgressBar();
         handler = new Handler();
     }
 
@@ -29,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        dialog.show();
+//        dialog.show();
+        spinner.setVisibility(View.VISIBLE);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                dialog.hide();
+//              dialog.hide();
+                spinner.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         }, 3000);
@@ -45,5 +51,9 @@ public class MainActivity extends AppCompatActivity {
         dialog.setMessage("Loading. Please wait...");
         dialog.setIndeterminate(true);
         dialog.setCanceledOnTouchOutside(true);
+    }
+
+    public void setupProgressBar(){
+        spinner  = (ProgressBar) findViewById(R.id.progress_bar);
     }
 }

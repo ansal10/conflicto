@@ -1,6 +1,7 @@
 package com.example.ansal007.conflicto;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private ProgressDialog dialog;
+    private InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-
+        imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         mPasswordView = (EditText) findViewById(R.id.password);
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(this);
@@ -85,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                    }else  if (password.equals(email)){  // GOTO LOGIN
                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                     }else {
                        Toast.makeText(getApplicationContext(), "Login Credentials Failed", Toast.LENGTH_SHORT).show();
@@ -109,6 +112,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
 
     @Override
     public void onClick(View v) {
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         attemptLogin();
     }
 
