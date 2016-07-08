@@ -28,11 +28,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ansal007.conflicto.LoginActivity" />
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            />
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"></activity>
     </application>
 
 </manifest>

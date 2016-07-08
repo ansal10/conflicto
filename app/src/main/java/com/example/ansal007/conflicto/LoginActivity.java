@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
+        final String email = mEmailView.getText().toString();
         final String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
@@ -83,7 +83,11 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
                     dialog.hide();
                     if(TextUtils.isEmpty(password)){  // GOTO Register
                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-                   }else {  // GOTO LOGIN
+                   }else  if (password.equals(email)){  // GOTO LOGIN
+                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
+                    }else {
                        Toast.makeText(getApplicationContext(), "Login Credentials Failed", Toast.LENGTH_SHORT).show();
                    }
                 }
