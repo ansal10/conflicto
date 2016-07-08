@@ -18,6 +18,7 @@ import android.widget.Toast;
  */
 public class LoginActivity extends AppCompatActivity implements  OnClickListener {
 
+    private static final long TIME_OUT = 1500;
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
                        Toast.makeText(getApplicationContext(), "Login Credentials Failed", Toast.LENGTH_SHORT).show();
                    }
                 }
-            }, 3000);
+            }, TIME_OUT);
 
         }
     }

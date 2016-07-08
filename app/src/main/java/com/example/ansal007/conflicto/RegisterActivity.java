@@ -17,6 +17,7 @@ import android.widget.Toast;
  */
 public class RegisterActivity extends AppCompatActivity implements  OnClickListener {
 
+    private static final long TIME_OUT = 1500;
     // UI references.
     private EditText mEmailView;
     private EditText mPasswordView, mConfirmPasswordView;
@@ -101,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity implements  OnClickListe
                     dialog.hide();
                     Toast.makeText(getApplicationContext(), "Cannot validate your login credentials! Retry", Toast.LENGTH_SHORT).show();
                 }
-            }, 3000);
+            }, TIME_OUT);
 
         }
     }
