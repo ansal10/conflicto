@@ -1,6 +1,7 @@
 package com.example.ansal007.conflicto;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,14 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setupProgressDialogue();
         handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                dialog.hide();
-            }
-        }, 3000);
-
-
     }
 
     @Override
@@ -33,9 +26,18 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dialog.show();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.hide();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        }, 3000);
+    }
 
     public void setupProgressDialogue(){
         dialog = new ProgressDialog(this); // this = YourActivity
@@ -43,6 +45,5 @@ public class MainActivity extends AppCompatActivity {
         dialog.setMessage("Loading. Please wait...");
         dialog.setIndeterminate(true);
         dialog.setCanceledOnTouchOutside(true);
-        dialog.show();
     }
 }
