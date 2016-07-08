@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Import" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Slideshow" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Tools" />
+    </group>
+
+    <item android:title="Fragment">
+        <menu>
+            <item
+                android:id="@+id/ic_frag_a"
+                android:title="Frag A"
+                />
+
+            <item
+                android:id="@+id/ic_frag_b"
+                android:title="Frag B"
+                />
+
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:title="Send" />
+
+            <item
+                android:id="@+id/main_menu"
+                android:title="Click to flip"
+                />
+        </menu>
+    </item>
+
+</menu>

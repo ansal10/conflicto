@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                    }else  if (password.equals(email)){  // GOTO LOGIN
                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                     }else {
                        Toast.makeText(getApplicationContext(), "Login Credentials Failed", Toast.LENGTH_SHORT).show();
