@@ -7,10 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.ansal007.conflicto.utilis.UIUtils;
 
 /**
  * A login screen that offers login via email/password.
@@ -39,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements  OnClickListe
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-        this.setupProgressDialogue();
+        dialog = UIUtils.getProgressDialogBar(this, ProgressDialog.STYLE_SPINNER, "Registering\nPlease Wait............");
     }
 
 
@@ -120,16 +121,10 @@ public class RegisterActivity extends AppCompatActivity implements  OnClickListe
 
     @Override
     public void onClick(View v) {
+        UIUtils.hideKeyBoardFromScreen(this);
         attemptLogin();
     }
 
-    public void setupProgressDialogue(){
-        dialog = new ProgressDialog(this); // this = YourActivity
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("Loading. Please wait...");
-        dialog.setIndeterminate(true);
-        dialog.setCanceledOnTouchOutside(true);
-    }
 
 }
 

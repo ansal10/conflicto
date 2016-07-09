@@ -1,7 +1,6 @@
 package com.example.ansal007.conflicto;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,11 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.ansal007.conflicto.utilis.UIUtils;
 
 /**
  * A login screen that offers login via email/password.
@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private ProgressDialog dialog;
-    private InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +32,11 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         mPasswordView = (EditText) findViewById(R.id.password);
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(this);
 
-        this.setupProgressDialogue();
+        dialog = UIUtils.getProgressDialogBar(this, ProgressDialog.STYLE_SPINNER, "Verifying your credentials\nPlease Wait............");
     }
 
 
@@ -112,16 +110,8 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
 
     @Override
     public void onClick(View v) {
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        UIUtils.hideKeyBoardFromScreen(this);
         attemptLogin();
-    }
-
-    public void setupProgressDialogue(){
-        dialog = new ProgressDialog(this); // this = YourActivity
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("Loading. Please wait...");
-        dialog.setIndeterminate(true);
-        dialog.setCanceledOnTouchOutside(true);
     }
 
 }

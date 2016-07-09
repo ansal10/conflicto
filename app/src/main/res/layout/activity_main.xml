@@ -41,13 +41,10 @@
         android:layout_height="0dp"
         android:layout_weight="0.3"/>
 
-    <ProgressBar
-        android:layout_weight="0.1"
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleLarge"
+    <include
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        layout="@layout/progress_bar"
         />
 
 

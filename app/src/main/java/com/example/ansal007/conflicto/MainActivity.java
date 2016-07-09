@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 spinner.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
-        }, 3000);
+        }, 5000);
     }
 
     public void setupProgressDialogue(){
