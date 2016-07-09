@@ -83,7 +83,11 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
                 public void run() {
                     dialog.hide();
                     if(TextUtils.isEmpty(password)){  // GOTO Register
-                       startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+
+                        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                        intent.putExtra("email", email);
+                        startActivity(intent);
+
                    }else  if (password.equals(email)){  // GOTO LOGIN
                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));

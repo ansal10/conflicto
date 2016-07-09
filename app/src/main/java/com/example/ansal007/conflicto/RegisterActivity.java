@@ -1,6 +1,7 @@
 package com.example.ansal007.conflicto;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -30,11 +31,18 @@ public class RegisterActivity extends AppCompatActivity implements  OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.email);
 
+        Intent intent= getIntent();
+        String email = intent.getStringExtra("email");
+        // Set up the login form.
+
+        mEmailView = (EditText) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
         mConfirmPasswordView = (EditText) findViewById(R.id.re_password);
+
+        if(email != null)
+            mEmailView.setText(email);
+
         Button mEmailSignInButton = (Button) findViewById(R.id.email_register_button);
         mEmailSignInButton.setOnClickListener(this);
 
