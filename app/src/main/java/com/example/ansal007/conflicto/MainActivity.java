@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //              dialog.hide();
                 spinner.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
             }
         }, 5000);
     }

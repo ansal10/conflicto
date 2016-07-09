@@ -12,4 +12,10 @@
     tools:context="com.example.ansal007.conflicto.HomeActivity"
     tools:showIn="@layout/app_bar_home">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/home_fragment_container"/>
+
 </RelativeLayout>
