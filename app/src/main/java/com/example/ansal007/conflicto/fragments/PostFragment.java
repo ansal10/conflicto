@@ -26,6 +26,7 @@ public class PostFragment extends Fragment  {
     private ViewGroup container;
     private View view;
     private RecyclerView recyclerView;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Nullable
@@ -43,6 +44,7 @@ public class PostFragment extends Fragment  {
         recyclerView = (RecyclerView) view.findViewById(R.id.list);
         recyclerView.setAdapter(adapter);
 
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
 
         return view;
     }

@@ -76,9 +76,4 @@ public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecycl
         }
 
     }
-
-
-
-
-
 }
