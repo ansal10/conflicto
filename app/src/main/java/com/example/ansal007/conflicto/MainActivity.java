@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final int TIME_OUT = 1000;
     private ProgressDialog dialog;
     private Handler handler;
     private ProgressBar spinner;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
-        }, 5000);
+        }, TIME_OUT);
     }
 
     public void setupProgressDialogue(){

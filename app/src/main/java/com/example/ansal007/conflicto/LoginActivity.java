@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements  OnClickListener
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 2;
     }
 
 

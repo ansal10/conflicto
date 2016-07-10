@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="2dp"
-    android:id="@+id/post_row">
+    android:layout_marginTop="8dp"
+    android:id="@+id/post_row"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,19 +25,87 @@
             android:paddingLeft="10dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:textSize="20sp"
-                android:id="@+id/post_content"
-                android:text="Your Name"/>
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/post_content"
+                    android:text="Your Name"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="12dp"
-                android:textSize="10sp"
-                android:text="created 2 min ago"/>
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/meta_data_text_size"
+                    android:textColor="@color/meta_data_text_color"
+                    android:text="posted : 2 min ago"/>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_details"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/post_like"
+                    android:textSize="@dimen/meta_data_text_size"
+                    android:textColor="@color/meta_data_text_color"
+                    android:text="Like 5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/post_endorsed"
+                    android:textSize="@dimen/meta_data_text_size"
+                    android:textColor="@color/meta_data_text_color"
+                    android:layout_marginLeft="10dp"
+                    android:text="Endorse 31"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/black">
 
     </LinearLayout>
 
