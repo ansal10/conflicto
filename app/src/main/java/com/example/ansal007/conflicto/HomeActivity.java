@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.ansal007.conflicto.fragments.PostFragment;
 import com.example.ansal007.conflicto.fragments.TrendingPostFragment;
 
 public class HomeActivity extends AppCompatActivity
@@ -40,13 +41,13 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager = getFragmentManager();
-        attachFragment( R.id.home_fragment_container, new TrendingPostFragment(), "HOME_FRAGMENT_CONTAINER");
+        attachFragment( R.id.home_fragment_container, new PostFragment(), "HOME_FRAGMENT_CONTAINER");
     }
 
-    private void attachFragment(int id, TrendingPostFragment trendingPostFragment,  String tagname) {
+    private void attachFragment(int id, PostFragment trendingPostFragment,  String tagname) {
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(id, trendingPostFragment, tagname);
+        transaction.add(id, trendingPostFragment, tagname);
         transaction.commit();
     }
 
