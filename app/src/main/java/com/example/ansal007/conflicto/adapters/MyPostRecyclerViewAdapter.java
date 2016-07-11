@@ -40,7 +40,7 @@ public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecycl
         holder.mItem = mValues.get(position);
 //        holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
-//        holder.mDetailsView.setText(mValues.get(position).details);
+        holder.mDetailsView.setText(mValues.get(position).details);
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +72,7 @@ public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecycl
 //            this.listener  = listener;
 //            this.mIdView = (TextView) itemView.findViewById(R.id.post_id);
             this.mContentView = (TextView) itemView.findViewById(R.id.post_content);
-//            this.mDetailsView = (TextView) itemView.findViewById(R.id.post_details);
+            this.mDetailsView = (TextView) itemView.findViewById(R.id.post_details);
         }
 
     }
