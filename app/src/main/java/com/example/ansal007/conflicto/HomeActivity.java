@@ -2,6 +2,7 @@ package com.example.ansal007.conflicto;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,12 +20,22 @@ import android.view.MenuItem;
 
 import com.example.ansal007.conflicto.fragments.PostFragment;
 import com.example.ansal007.conflicto.fragments.TrendingPostFragment;
+import com.example.ansal007.conflicto.utilis.UIUtils;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String HOME_FRAGMENT_CONTAINER_TAG = "HOME_FRAGMENT_CONTAINER";
+    private final String NEWS_FEED = "News Feed";
+    private final String TRENDING_POST = "Trending Post";
+    private final String MY_POST = "My Post";
+    private final String FOLLOWING_POST = "Following Post";
+
+    private PostFragment postFragment;
+    private ProgressDialog progressDialog;
     TrendingPostFragment trendingPostFragment ;
     FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +51,19 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        progressDialog = UIUtils.getProgressDialogBar(this, ProgressDialog.STYLE_SPINNER, "Loading...........");
+        progressDialog.show();
+        postFragment = new PostFragment();
         fragmentManager = getFragmentManager();
-        attachFragment( R.id.home_fragment_container, new PostFragment(), "HOME_FRAGMENT_CONTAINER");
+        attachFragment( R.id.home_fragment_container, postFragment, HOME_FRAGMENT_CONTAINER_TAG);
     }
 
     private void attachFragment(int id, PostFragment trendingPostFragment,  String tagname) {
-
+        progressDialog.show();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(id, trendingPostFragment, tagname);
+        transaction.replace(id, trendingPostFragment, tagname);
         transaction.commit();
+        progressDialog.hide();
     }
 
 
@@ -103,13 +118,25 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.following_menu) {
 
-        } else if (id == R.id.nav_slideshow) {
+            attachFragment(R.id.home_fragment_container, postFragment, HOME_FRAGMENT_CONTAINER_TAG );
+            setTitle(FOLLOWING_POST);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.my_post_menu) {
+
+            attachFragment(R.id.home_fragment_container, postFragment, HOME_FRAGMENT_CONTAINER_TAG );
+            setTitle(MY_POST);
+
+        } else if (id == R.id.news_feed_menu) {
+
+            attachFragment(R.id.home_fragment_container, postFragment, HOME_FRAGMENT_CONTAINER_TAG );
+            setTitle(NEWS_FEED);
+
+        } else if (id == R.id.top_trending_menu) {
+
+            attachFragment(R.id.home_fragment_container, postFragment, HOME_FRAGMENT_CONTAINER_TAG );
+            setTitle(TRENDING_POST);
 
         } else if (id == R.id.nav_share) {
 

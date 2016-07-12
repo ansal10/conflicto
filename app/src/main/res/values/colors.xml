@@ -3,5 +3,6 @@
     <color name="colorPrimary">#5b873e</color>
     <color name="colorPrimaryDark">#367439</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="meta_data_text_color">#4775ff</color>
+    <color name="meta_data_text_color">#6080de</color>
+    <color name="row_background_color">#ffffff</color>
 </resources>

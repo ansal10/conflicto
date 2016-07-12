@@ -6,6 +6,7 @@
     android:layout_marginBottom="2dp"
     android:layout_marginTop="8dp"
     android:id="@+id/post_row"
+    android:background="@color/row_background_color"
     >
 
     <LinearLayout
@@ -32,8 +33,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:id="@+id/post_content"
+                    android:textStyle="bold"
                     android:text="Your Name"/>
 
             </LinearLayout>
